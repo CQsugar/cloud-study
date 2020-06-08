@@ -19,7 +19,7 @@ public class PaymentController {
     private PaymentService paymentService;
 
     @PostMapping("/create")
-    public Result create(Payment payment){
+    public Result create(@RequestBody Payment payment) {
         try {
             return paymentService.create(payment);
         }catch (Exception e){
