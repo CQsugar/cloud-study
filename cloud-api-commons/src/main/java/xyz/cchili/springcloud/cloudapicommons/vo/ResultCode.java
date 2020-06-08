@@ -1,4 +1,4 @@
-package xyz.cchili.springcloud.vo;
+package xyz.cchili.springcloud.cloudapicommons.vo;
 
 /**
  * @author CQSuagr

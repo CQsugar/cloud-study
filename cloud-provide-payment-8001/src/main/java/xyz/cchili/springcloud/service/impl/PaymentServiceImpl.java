@@ -3,11 +3,11 @@ package xyz.cchili.springcloud.service.impl;
 import cn.hutool.core.util.ObjectUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
+import xyz.cchili.springcloud.cloudapicommons.pojo.Payment;
+import xyz.cchili.springcloud.cloudapicommons.vo.Result;
+import xyz.cchili.springcloud.cloudapicommons.vo.ResultCode;
 import xyz.cchili.springcloud.mapper.PaymentMapper;
-import xyz.cchili.springcloud.pojo.Payment;
 import xyz.cchili.springcloud.service.PaymentService;
-import xyz.cchili.springcloud.vo.Result;
-import xyz.cchili.springcloud.vo.ResultCode;
 
 import javax.annotation.Resource;
 

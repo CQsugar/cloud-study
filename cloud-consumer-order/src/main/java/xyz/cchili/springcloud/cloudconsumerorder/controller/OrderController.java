@@ -5,8 +5,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
-import xyz.cchili.springcloud.cloudconsumerorder.pojo.Payment;
-import xyz.cchili.springcloud.cloudconsumerorder.vo.Result;
+import xyz.cchili.springcloud.cloudapicommons.pojo.Payment;
+import xyz.cchili.springcloud.cloudapicommons.vo.Result;
 
 import javax.annotation.Resource;
 

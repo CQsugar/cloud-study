@@ -1,4 +1,4 @@
-package xyz.cchili.springcloud.pojo;
+package xyz.cchili.springcloud.cloudapicommons.pojo;
 
 import lombok.Data;
 import lombok.experimental.Accessors;

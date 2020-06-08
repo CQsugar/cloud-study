@@ -1,10 +1,10 @@
 package xyz.cchili.springcloud.controller;
 
 import org.springframework.web.bind.annotation.*;
-import xyz.cchili.springcloud.pojo.Payment;
+import xyz.cchili.springcloud.cloudapicommons.pojo.Payment;
+import xyz.cchili.springcloud.cloudapicommons.vo.Result;
+import xyz.cchili.springcloud.cloudapicommons.vo.ResultCode;
 import xyz.cchili.springcloud.service.PaymentService;
-import xyz.cchili.springcloud.vo.Result;
-import xyz.cchili.springcloud.vo.ResultCode;
 
 import javax.annotation.Resource;
 

@@ -1,7 +1,8 @@
 package xyz.cchili.springcloud.service;
 
-import xyz.cchili.springcloud.pojo.Payment;
-import xyz.cchili.springcloud.vo.Result;
+
+import xyz.cchili.springcloud.cloudapicommons.pojo.Payment;
+import xyz.cchili.springcloud.cloudapicommons.vo.Result;
 
 public interface PaymentService{
 

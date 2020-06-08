@@ -70,6 +70,14 @@
             <groupId>cn.hutool</groupId>
             <artifactId>hutool-all</artifactId>
         </dependency>
+
+        <!--        公共实体类-->
+        <dependency>
+            <groupId>xyz.cchili.springcloud</groupId>
+            <artifactId>cloud-api-commons</artifactId>
+            <version>${project.parent.version}</version>
+        </dependency>
+
     </dependencies>
 
 
