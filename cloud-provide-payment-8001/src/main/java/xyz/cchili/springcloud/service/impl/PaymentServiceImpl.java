@@ -38,7 +38,7 @@ public class PaymentServiceImpl implements PaymentService{
             return new Result<>(true, payment);
         } else {
             log.info("查询失败");
-            return new Result<>(true, ResultCode.NO_DATA);
+            return new Result<>(false, ResultCode.NO_DATA);
         }
     }
 }
