@@ -36,3 +36,4 @@ eureka:
     register-with-eureka: true
   instance:
     instance-id: payment8002
+    prefer-ip-address: true
