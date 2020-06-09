@@ -1,5 +1,8 @@
 package xyz.cchili.springcloud.cloudconsumerorder.controller;
 
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.cloud.client.ServiceInstance;
+import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -9,6 +12,7 @@ import xyz.cchili.springcloud.cloudapicommons.pojo.Payment;
 import xyz.cchili.springcloud.cloudapicommons.vo.Result;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 /**
  * @author CQSuagr
@@ -16,6 +20,7 @@ import javax.annotation.Resource;
  */
 @RestController
 @RequestMapping("/consumer/payment")
+@Slf4j
 public class OrderController {
 
     //private static final String URL = "http://localhost:8001";
@@ -24,6 +29,9 @@ public class OrderController {
 
     @Resource
     private RestTemplate restTemplate;
+
+    @Resource
+    private DiscoveryClient discoveryClient;
 
     @GetMapping("/create")
     public Result create(Payment payment) {
@@ -38,5 +46,20 @@ public class OrderController {
     @GetMapping("/port")
     public Result port() {
         return restTemplate.getForObject(URL + "/payment/port", Result.class);
+    }
+
+    @GetMapping("/discovery")
+    public Object discovery() {
+        List<String> services = discoveryClient.getServices();
+        for (String service : services) {
+            log.info("==={}===", service);
+        }
+
+        List<ServiceInstance> instances = discoveryClient.getInstances("CLOUD-PAYMENT-SERVICE");
+        for (ServiceInstance instance : instances) {
+            log.info(instance.getServiceId() + "\t" + instance.getHost() + "\t" + instance.getPort() + "\t" + instance.getUri());
+        }
+
+        return discoveryClient;
     }
 }
