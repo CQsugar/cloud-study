@@ -31,16 +31,16 @@ public class PaymentController {
     public Result create(@RequestBody Payment payment) {
         try {
             return paymentService.create(payment);
-        }catch (Exception e){
+        } catch (Exception e) {
             return new Result(false, ResultCode.COMMON_FAIL);
         }
     }
 
     @GetMapping("/get/{id}")
-    public Result PaymentById(@PathVariable("id") Long id){
+    public Result PaymentById(@PathVariable("id") Long id) {
         try {
             return paymentService.getPaymentById(id);
-        }catch (Exception e){
+        } catch (Exception e) {
             return new Result(false, ResultCode.COMMON_FAIL);
         }
     }
