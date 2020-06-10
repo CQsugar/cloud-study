@@ -20,6 +20,12 @@ spring:
       max-lifetime: 1800000
       connection-timeout: 30000
       connection-test-query: SELECT 1
+  cloud:
+    consul:
+      host: loacalhost
+      port: 8500
+      discovery:
+        service-name: ${spring.application.name}
 
 mybatis:
   type-aliases-package: xyz.cchili.springcloud.pojo
