@@ -1,5 +1,6 @@
 package xyz.cchili.springcloud.controller;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
 import xyz.cchili.springcloud.cloudapicommons.pojo.Payment;
 import xyz.cchili.springcloud.cloudapicommons.vo.Result;
@@ -17,6 +18,14 @@ import javax.annotation.Resource;
 public class PaymentController {
     @Resource
     private PaymentService paymentService;
+
+    @Value("${server.port}")
+    private String port;
+
+    @GetMapping("/port")
+    public Result port() {
+        return new Result(true, port);
+    }
 
     @PostMapping("/create")
     public Result create(@RequestBody Payment payment) {
