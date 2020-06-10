@@ -18,10 +18,15 @@ import javax.annotation.Resource;
 @RequestMapping("/consumer/payment")
 public class OrderController {
 
-    private static final String URL = "http://localhost:8001";
+    private static final String URL = "http://cloud-payment-service/";
 
     @Resource
     private RestTemplate restTemplate;
+
+    @GetMapping("/port")
+    public Result port() {
+        return restTemplate.getForObject(URL + "payment/port", Result.class);
+    }
 
     @GetMapping("/create")
     public Result create(Payment payment) {
