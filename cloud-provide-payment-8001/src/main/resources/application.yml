@@ -22,7 +22,7 @@ spring:
       connection-test-query: SELECT 1
   cloud:
     consul:
-      host: loacalhost
+      host: localhost
       port: 8500
       discovery:
         service-name: ${spring.application.name}
