@@ -30,7 +30,9 @@ public class OrderController {
 
     @GetMapping(value = "/port", produces = MediaType.APPLICATION_JSON_VALUE)
     public Result getPort() {
+        //openfeign客户端 默认等待一秒钟
         return paymentService.port();
     }
+
 
 }

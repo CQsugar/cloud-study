@@ -13,3 +13,14 @@ eureka:
 spring:
   application:
     name: cloud-consumer-payment
+
+#设置feign客户端超时时间
+ribbon:
+  #读取资源所用时间
+  ReadTimeout: 5000
+  #连接所用时间
+  ConnectionTimeout: 5000
+
+logging:
+  level:
+    xyz.cchili.springcloud.cloudconsumerorder.service: debug

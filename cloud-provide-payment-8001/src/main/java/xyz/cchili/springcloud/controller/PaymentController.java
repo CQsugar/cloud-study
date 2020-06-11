@@ -8,6 +8,7 @@ import xyz.cchili.springcloud.cloudapicommons.vo.ResultCode;
 import xyz.cchili.springcloud.service.PaymentService;
 
 import javax.annotation.Resource;
+import java.util.concurrent.TimeUnit;
 
 /**
  * @author CQSuagr
@@ -24,6 +25,11 @@ public class PaymentController {
 
     @GetMapping("/port")
     public Result port() {
+        try {
+            TimeUnit.SECONDS.sleep(3);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         return new Result(true, port);
     }
 

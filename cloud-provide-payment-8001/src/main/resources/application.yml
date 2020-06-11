@@ -37,3 +37,5 @@ eureka:
   instance:
     instance-id: payment8001
     prefer-ip-address: true
+
+
