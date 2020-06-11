@@ -10,7 +10,7 @@ import org.springframework.web.client.RestTemplate;
  * @date 创建时间:2020/6/8 14:46
  */
 @Configuration
-public class MebConfiguration {
+public class WebConfiguration {
 
     @Bean
     //开启默认负载均衡机制
