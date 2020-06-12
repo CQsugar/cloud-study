@@ -1,6 +1,9 @@
 package xyz.cchili.springcloud.service.impl;
 
+import cn.hutool.core.util.IdUtil;
 import cn.hutool.core.util.ObjectUtil;
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixProperty;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import xyz.cchili.springcloud.cloudapicommons.pojo.Payment;
@@ -40,5 +43,23 @@ public class PaymentServiceImpl implements PaymentService{
             log.info("查询失败");
             return new Result<>(false, ResultCode.NO_DATA);
         }
+    }
+
+    @HystrixCommand(fallbackMethod = "fallback", commandProperties = {
+            @HystrixProperty(name = "circuitBreaker.enabled", value = "true"),
+            @HystrixProperty(name = "circuitBreaker.requestVolumeThreshold", value = "10"),
+            @HystrixProperty(name = "circuitBreaker.sleepWindowInMilliseconds", value = "10000"),
+            @HystrixProperty(name = "circuitBreaker.errorThresholdPercentage", value = "60")
+    })
+    public Result hystrix(Long id) {
+        if (id < 0) {
+            throw new RuntimeException("不能为负数");
+        }
+        String uuid = IdUtil.simpleUUID();
+        return new Result<>(true, Thread.currentThread().getName() + ":" + uuid + "-" + id);
+    }
+
+    public Result fallback(Long id) {
+        return new Result<>(false, "服务器超载");
     }
 }

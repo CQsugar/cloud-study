@@ -60,4 +60,11 @@ public class PaymentController {
             return new Result(false, ResultCode.COMMON_FAIL);
         }
     }
+
+    @GetMapping(value = "/hystrix/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
+    public Result hystrix(@PathVariable Long id) {
+        return paymentService.hystrix(id);
+    }
+
 }
+

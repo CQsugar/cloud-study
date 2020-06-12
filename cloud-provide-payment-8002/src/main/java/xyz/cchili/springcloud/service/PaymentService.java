@@ -9,4 +9,6 @@ public interface PaymentService {
     Result create(Payment payment);
 
     Result getPaymentById(Long id);
+
+    Result hystrix(Long id);
 }
