@@ -24,3 +24,7 @@ ribbon:
 logging:
   level:
     xyz.cchili.springcloud.cloudconsumerorder.service: debug
+
+feign:
+  hystrix:
+    enabled: true

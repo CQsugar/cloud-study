@@ -1,6 +1,8 @@
 package xyz.cchili.springcloud.controller;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 import xyz.cchili.springcloud.cloudapicommons.pojo.Payment;
 import xyz.cchili.springcloud.cloudapicommons.vo.Result;
@@ -16,6 +18,7 @@ import java.util.concurrent.TimeUnit;
  */
 @RestController
 @RequestMapping("/payment")
+@Slf4j
 public class PaymentController {
     @Resource
     private PaymentService paymentService;
@@ -23,17 +26,24 @@ public class PaymentController {
     @Value("${server.port}")
     private String port;
 
-    @GetMapping("/port")
-    public Result port() {
+    @GetMapping(value = "/port3", produces = MediaType.APPLICATION_JSON_VALUE)
+    public Result<String> port3() {
         try {
             TimeUnit.SECONDS.sleep(3);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        return new Result(true, port);
+        log.info("=======port3请求=========");
+        return new Result<>(true, Thread.currentThread().getName() + ":" + port);
     }
 
-    @PostMapping("/create")
+    @GetMapping(value = "/port", produces = MediaType.APPLICATION_JSON_VALUE)
+    public Result<String> port() {
+        log.info("=======port请求=========");
+        return new Result<>(true, Thread.currentThread().getName() + ":" + port);
+    }
+
+    @PostMapping(value = "/create", produces = MediaType.APPLICATION_JSON_VALUE)
     public Result create(@RequestBody Payment payment) {
         try {
             return paymentService.create(payment);
@@ -42,8 +52,8 @@ public class PaymentController {
         }
     }
 
-    @GetMapping("/get/{id}")
-    public Result PaymentById(@PathVariable("id") Long id) {
+    @GetMapping(value = "/get/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
+    public Result paymentById(@PathVariable("id") Long id) {
         try {
             return paymentService.getPaymentById(id);
         } catch (Exception e) {
