@@ -1,8 +1,8 @@
-package xyz.cchili.springcloud.cloudconsumerorder.service.impl;
+package xyz.cchili.springcloud.cloudconsumerorder2.service.impl;
 
 import org.springframework.stereotype.Component;
 import xyz.cchili.springcloud.cloudapicommons.vo.Result;
-import xyz.cchili.springcloud.cloudconsumerorder.service.PaymentService;
+import xyz.cchili.springcloud.cloudconsumerorder2.service.PaymentService;
 
 /**
  * @author CQSuagr

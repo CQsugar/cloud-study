@@ -1,4 +1,4 @@
-package xyz.cchili.springcloud.cloudconsumerorder.config;
+package xyz.cchili.springcloud.cloudconsumerorder2.config;
 
 import feign.Logger;
 import org.springframework.context.annotation.Bean;

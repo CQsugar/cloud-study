@@ -21,8 +21,8 @@
     <module>cloud-consumer-order</module>
     <module>cloud-api-commons</module>
     <module>cloud-eureka-server</module>
-    <module>cloud-consumer-hystrix-dashboard</module>
     <module>cloud-gateway</module>
+      <module>cloud-config-center</module>
   </modules>
 
   <!--统一管理jar包版本-->
@@ -31,8 +31,8 @@
     <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.target>1.8</maven.compiler.target>
     <log4j.version>1.2.17</log4j.version>
-    <spring.boot.version>2.2.1.RELEASE</spring.boot.version>
-    <spring.cloud.version>Hoxton.SR5</spring.cloud.version>
+      <spring.boot.version>2.2.2.RELEASE</spring.boot.version>
+      <spring.cloud.version>Hoxton.SR1</spring.cloud.version>
     <spring.cloud.alibaba.version>2.1.0.RELEASE</spring.cloud.alibaba.version>
     <tk.mybatis.spring.boot.version>2.1.5</tk.mybatis.spring.boot.version>
     <pagehelper.spring.boot.version>1.2.12</pagehelper.spring.boot.version>
@@ -98,6 +98,10 @@
 
   <!--第三方maven私服-->
   <repositories>
+      <repository>
+          <id>apache</id>
+          <url>https://repo.maven.apache.org/maven2/</url>
+      </repository>
     <repository>
       <id>nexus-aliyun</id>
       <name>Nexus aliyun</name>

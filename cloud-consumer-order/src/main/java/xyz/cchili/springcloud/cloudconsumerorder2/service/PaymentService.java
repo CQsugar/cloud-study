@@ -1,4 +1,4 @@
-package xyz.cchili.springcloud.cloudconsumerorder.service;
+package xyz.cchili.springcloud.cloudconsumerorder2.service;
 
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.http.MediaType;
@@ -6,7 +6,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import xyz.cchili.springcloud.cloudapicommons.vo.Result;
-import xyz.cchili.springcloud.cloudconsumerorder.service.impl.PaymentFallBackServiceImpl;
+import xyz.cchili.springcloud.cloudconsumerorder2.service.impl.PaymentFallBackServiceImpl;
 
 /**
  * @author CQSuagr

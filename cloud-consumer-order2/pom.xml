@@ -10,7 +10,7 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
-    <artifactId>cloud-consumer-order</artifactId>
+    <artifactId>cloud-consumer-order2</artifactId>
     <name>cloud-consumer-order</name>
 
     <properties>

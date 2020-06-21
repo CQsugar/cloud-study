@@ -1,4 +1,4 @@
-package xyz.cchili.springcloud.cloudconsumerorder;
+package xyz.cchili.springcloud.cloudconsumerorder2;
 
 import com.netflix.hystrix.contrib.metrics.eventstream.HystrixMetricsStreamServlet;
 import org.springframework.boot.SpringApplication;
@@ -13,10 +13,10 @@ import org.springframework.context.annotation.Bean;
 @EnableEurekaClient
 @EnableFeignClients
 @EnableHystrix
-public class CloudConsumerOrderApplication {
+public class CloudConsumerOrder2Application {
 
     public static void main(String[] args) {
-        SpringApplication.run(CloudConsumerOrderApplication.class, args);
+        SpringApplication.run(CloudConsumerOrder2Application.class, args);
     }
 
     /**

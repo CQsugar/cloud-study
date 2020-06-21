@@ -1,0 +1,35 @@
+server:
+  port: 3344
+
+spring:
+  application:
+    name: cloud-config-center
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/CQsugar/spring-cloud-config-java.git
+          #搜索目录
+          search-paths:
+            - spring-cloud-config-java
+          username: CQSugar
+          password: Sugar927.
+        #分支
+        default-label: master
+  #rabbitMQ支持
+  rabbitmq:
+    host: 192.168.220.131
+
+eureka:
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://localhost:7001/eureka
+
+#rabbitMQ相关配置，暴露bus刷新配置的端点
+management:
+  endpoints: #暴露bus刷新配置的端点
+    web:
+      exposure:
+        include: "bus-refresh"
