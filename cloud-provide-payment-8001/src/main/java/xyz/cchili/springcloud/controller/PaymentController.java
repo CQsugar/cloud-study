@@ -10,6 +10,8 @@ import xyz.cchili.springcloud.cloudapicommons.vo.ResultCode;
 import xyz.cchili.springcloud.service.PaymentService;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
+import java.util.Enumeration;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -22,6 +24,9 @@ import java.util.concurrent.TimeUnit;
 public class PaymentController {
     @Resource
     private PaymentService paymentService;
+
+    @Resource
+    private HttpServletRequest request;
 
     @Value("${server.port}")
     private String port;
@@ -55,6 +60,10 @@ public class PaymentController {
     @GetMapping(value = "/get/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
     public Result paymentById(@PathVariable("id") Long id) {
         try {
+            Enumeration<String> headerNames = request.getHeaderNames();
+            while (headerNames.hasMoreElements()) {
+                log.info("==============={}===================", headerNames.nextElement());
+            }
             return paymentService.getPaymentById(id);
         }catch (Exception e){
             return new Result(false, ResultCode.COMMON_FAIL);
