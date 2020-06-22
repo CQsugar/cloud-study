@@ -13,6 +13,11 @@ eureka:
 spring:
   application:
     name: cloud-consumer-payment
+  zipkin:
+    base-url: http://192.168.220.131:9411/
+  sleuth:
+    sampler:
+      probability: 1
 
 #设置feign客户端超时时间
 ribbon:

@@ -2,7 +2,6 @@
 server:
   port: 8001
 
-
 spring:
   application:
     name: cloud-payment-service
@@ -21,6 +20,11 @@ spring:
       max-lifetime: 1800000
       connection-timeout: 30000
       connection-test-query: SELECT 1
+  zipkin:
+    base-url: http://192.168.220.131:9411
+  sleuth:
+    sampler:
+      probability: 1
 
 mybatis:
   type-aliases-package: xyz.cchili.springcloud.pojo

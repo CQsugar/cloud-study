@@ -21,7 +21,6 @@
     <module>cloud-consumer-order</module>
     <module>cloud-api-commons</module>
     <module>cloud-eureka-server</module>
-    <module>cloud-consumer-hystrix-dashboard</module>
     <module>cloud-gateway</module>
   </modules>
 
