@@ -21,8 +21,9 @@
     <module>cloud-consumer-order</module>
     <module>cloud-api-commons</module>
     <module>cloud-eureka-server</module>
-    <module>cloud-consumer-hystrix-dashboard</module>
     <module>cloud-gateway</module>
+    <module>cloud-stream-provide-8801</module>
+    <module>cloud-stream-consumer-8802</module>
   </modules>
 
   <!--统一管理jar包版本-->
@@ -32,7 +33,7 @@
     <maven.compiler.target>1.8</maven.compiler.target>
     <log4j.version>1.2.17</log4j.version>
     <spring.boot.version>2.2.1.RELEASE</spring.boot.version>
-    <spring.cloud.version>Hoxton.SR5</spring.cloud.version>
+    <spring.cloud.version>Hoxton.SR3</spring.cloud.version>
     <spring.cloud.alibaba.version>2.1.0.RELEASE</spring.cloud.alibaba.version>
     <tk.mybatis.spring.boot.version>2.1.5</tk.mybatis.spring.boot.version>
     <pagehelper.spring.boot.version>1.2.12</pagehelper.spring.boot.version>
@@ -49,7 +50,7 @@
         <version>${tk.mybatis.spring.boot.version}</version>
       </dependency>
 
-      <!--Spring cloud Hoxton.SR5-->
+      <!--Spring cloud Hoxton.SR1-->
       <dependency>
         <groupId>org.springframework.cloud</groupId>
         <artifactId>spring-cloud-dependencies</artifactId>
