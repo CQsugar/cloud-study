@@ -1,0 +1,28 @@
+server:
+  port: 80
+
+spring:
+  application:
+    name: consumer-payment
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+    sentinel:
+      transport:
+        port: 8919
+        dashboard: localhost:8080
+
+logging:
+  level:
+    xyz.cchili.springcloud.consumer.service: debug
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+feign:
+  sentinel:
+    enabled: true

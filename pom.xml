@@ -17,12 +17,9 @@
   <name>cloud</name>
 
   <modules>
-    <module>cloud-provide-payment-8001</module>
-    <module>cloud-consumer-order</module>
     <module>cloud-api-commons</module>
-    <module>cloud-eureka-server</module>
-    <module>cloud-consumer-hystrix-dashboard</module>
-    <module>cloud-gateway</module>
+    <module>cloudalibaba-consumer-payment</module>
+    <module>cloudalibaba-config-nacos-client</module>
   </modules>
 
   <!--统一管理jar包版本-->
