@@ -15,7 +15,7 @@ import xyz.cchili.springcloud.cloudapicommons.vo.Result;
 @RefreshScope
 public class ClientController {
 
-    @Value("${song.name}")
+    @Value("${config.name}")
     private String name;
 
     @Value("${spring.application.name}")
